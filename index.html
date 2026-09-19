@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Beautiful Paintings - Viewer</title>
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+
+    <script>
+    function idStringToToken(tokenIdString) {
+        return BigInt(tokenIdString).toString(16).padStart(64, '0');
+    }
+    const paramsString = window.location.search;
+    const searchParams = new URLSearchParams(paramsString);
+    var tokenIdString = searchParams.get("tokenId");
+    var token = idStringToToken(tokenIdString);
+    </script>
+
+    <script src="artCode.js"></script>
+</head>
+</html>
